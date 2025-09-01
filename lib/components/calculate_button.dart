@@ -1,4 +1,4 @@
-import 'package:bmi_app/screens/result_screen.dart';
+import 'package:bmi_app/screens/bmi_screens/bmi_result_screen.dart';
 import 'package:flutter/material.dart';
 
 class CalculateButton extends StatelessWidget {

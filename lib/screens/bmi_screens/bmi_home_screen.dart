@@ -4,17 +4,25 @@ import 'package:bmi_app/components/gender_selection_row.dart';
 import 'package:bmi_app/components/height_slider.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class BmiHomeScreen extends StatefulWidget {
+  const BmiHomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<BmiHomeScreen> createState() => _BmiHomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _BmiHomeScreenState extends State<BmiHomeScreen> {
   double height = 110;
   int weight = 60;
   int age = 20;
+
+  @override
+  void initState() {
+    super.initState();
+    height = 110;
+    weight = 60;
+    age = 20;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: const Color(0xFF24263B),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           const GenderSelectionRow(),
           HeightSlider(
