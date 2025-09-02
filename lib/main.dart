@@ -7,7 +7,6 @@ void main() {
   runApp(const MyApp());
 }
 
-int currentIndex = 0;
 Widget? body = const BmiHomeScreen();
 List<Widget> screens = [
   const BmiHomeScreen(),
@@ -40,47 +39,33 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: body,
+      body: screens[currentIndex],
       bottomNavigationBar: Container(
         height: 82,
         margin: const EdgeInsets.only(top: 8),
         child: BottomNavigationBar(
+          selectedItemColor: Colors.blue,
+          unselectedItemColor: Colors.grey,
           currentIndex: currentIndex,
-          items: [
-           BottomNavigationBarItem(
-              icon: IconButton(
-                onPressed: () {
-                  body = screens[0];
-                  setState(() {});
-                },
-                icon: const Icon(Icons.health_and_safety),
-              ),
+          onTap: (index) {
+            setState(() {
+              currentIndex = index;
+            });
+          },
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.health_and_safety),
               label: "BMI",
             ),
             BottomNavigationBarItem(
-              icon: IconButton(
-                onPressed: () {
-                  body = screens[1];
-                  setState(() {});
-                },
-                icon: const Icon(Icons.calculate),
-              ),
+              icon: Icon(Icons.calculate),
               label: "Calculator",
             ),
-            
-            BottomNavigationBarItem(
-              icon: IconButton(
-                onPressed: () {
-                  body = screens[2];
-                  setState(() {});
-                },
-                icon: const Icon(Icons.login),
-              ),
-              label: "Login",
-            ),
+            BottomNavigationBarItem(icon: Icon(Icons.login), label: "Login"),
           ],
         ),
       ),
