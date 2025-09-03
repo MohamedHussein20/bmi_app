@@ -1,4 +1,4 @@
-import 'package:bmi_app/components/gender_container.dart';
+import 'package:bmi_app/screens/bmi_screens/components/gender_container.dart';
 import 'package:flutter/material.dart';
 
 class GenderSelectionRow extends StatefulWidget {

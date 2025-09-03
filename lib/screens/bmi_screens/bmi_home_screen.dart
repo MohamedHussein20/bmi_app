@@ -1,7 +1,7 @@
-import 'package:bmi_app/components/attributes_row.dart';
-import 'package:bmi_app/components/calculate_button.dart';
-import 'package:bmi_app/components/gender_selection_row.dart';
-import 'package:bmi_app/components/height_slider.dart';
+import 'package:bmi_app/screens/bmi_screens/components/attributes_row.dart';
+import 'package:bmi_app/screens/bmi_screens/components/calculate_button.dart';
+import 'package:bmi_app/screens/bmi_screens/components/gender_selection_row.dart';
+import 'package:bmi_app/screens/bmi_screens/components/height_slider.dart';
 import 'package:flutter/material.dart';
 
 class BmiHomeScreen extends StatefulWidget {
