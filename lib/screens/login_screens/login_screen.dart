@@ -12,6 +12,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   IconData suffixIcon = Icons.visibility;
+  bool obscureText = false;
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
@@ -74,20 +75,18 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           const SizedBox(height: 16),
                           TextFormField(
-                            controller: suffixIcon == Icons.visibility
-                                ? passwordController
-                                : TextEditingController(
-                                    text: '*' * passwordController.text.length,
-                                  ),
+                            obscureText: obscureText,
+                            controller: passwordController,
                             decoration: InputDecoration(
                               prefixIcon: const Icon(Icons.lock),
                               suffixIcon: IconButton(
                                 icon: Icon(suffixIcon),
                                 onPressed: () {
                                   setState(() {
-                                    suffixIcon = suffixIcon == Icons.visibility
-                                        ? Icons.visibility_off
-                                        : Icons.visibility;
+                                    obscureText = !obscureText;
+                                    suffixIcon = obscureText
+                                        ? Icons.visibility
+                                        : Icons.visibility_off;
                                   });
                                 },
                               ),
